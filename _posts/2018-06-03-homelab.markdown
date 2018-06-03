@@ -17,18 +17,21 @@ If I had a little more money I would probably get a couple more servers like the
 
 Anyway, here's what I have going on at the moment:
 
-# Physical
-## skynet - Linksys WRT1900ACS router
+## Physical
+### skynet - Linksys WRT1900ACS router
 * OpenVPN
 
-## davinci - MacBook Pro 15 (2014)
+
+### davinci - MacBook Pro 15 (2014)
 * Daily driver
 * The best MacBook ever made (I'll probably have another post in the future about how the new MacBooks are shit)
 
-## maxwell - MacBook Pro 13 (2010)
+
+### maxwell - MacBook Pro 13 (2010)
 * Drobo Gen1 (USB) Network Gateway
 
-## tesla - Dell T20 server
+
+### tesla - Dell T20 server
 * Quad core Xeon E3-1225
 * 16GB RAM
 * XenServer 7.0
@@ -40,21 +43,21 @@ Anyway, here's what I have going on at the moment:
   * fermi
   * edison
 
-## galileo - Drobo 5N - NAS
+### galileo - Drobo 5N - NAS
 * Media NAS
 
-## einstein - Desktop Gaming Rig
+### einstein - Desktop Gaming Rig
 * Intel i5 2500 (still going strong!)
 * 16G RAM
 * Gigabyte GTX 960 Video Card
 
-# Virtual
-## newton - virtual CentOS 7 - Plex/DNS
+## Virtual
+### newton - virtual CentOS 7 - Plex/DNS
 * Plex media server
 * Pi-hole
 * dnsmasq DNS server
 
-## archimedes and aristotle virtual Centos 7 
+### archimedes and aristotle virtual Centos 7 
 Docker Swarm
 * docker-ce
 * running a bunch of docker containers (changes all the time) including:
@@ -69,13 +72,13 @@ Docker Swarm
   * Other personal media applications
   * Previously also ran a Rocketchat server and a Guacamole server but these have gone away in favor of other services
 
-## euler - virtual Centos 7 - Database
+### euler - virtual Centos 7 - Database
 * MariaDB
 * mongodb
 * PostgreSQL
 
-## fermi - virtual CentOS 7 - Backups
+### fermi - virtual CentOS 7 - Backups
 * bacula
 
-## edison - virtual Windows 10 - VDI for remote access 
-(offline)
+### edison - virtual Windows 10 - VDI for remote access 
+* as needed

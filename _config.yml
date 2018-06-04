@@ -23,7 +23,6 @@ github_username: kvecchione
 copyright: 2018
 
 # Build settings
-theme: jekyll-clean-dark
 plugins:
   - jekyll-feed
 social:

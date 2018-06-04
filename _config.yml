@@ -28,7 +28,7 @@ plugins:
 social:
   twitter: 'audiosyncrasy'
   github: 'kvecchione'
-  linkedin: 'kvecchione'
+  linkedin: 'umkvec'
   rss: feed.xml
 permalink: /:year/:month/:title
 markdown: kramdown

@@ -29,6 +29,7 @@ Anyway, here's what I have going on at the moment:
 
 ### maxwell - MacBook Pro 13 (2010)
 * Drobo Gen1 (USB) Network Gateway
+* OSX Remote Desktop
 
 
 ### tesla - Dell T20 server
@@ -42,43 +43,59 @@ Anyway, here's what I have going on at the moment:
   * euler
   * fermi
   * edison
+  * haproxy
 
-### galileo - Drobo 5N - NAS
+
+### galileo - Drobo 5N NAS
 * Media NAS
 
-### einstein - Desktop Gaming Rig
+
+### einstein - Windows 10 - Gaming Desktop
 * Intel i5 2500 (still going strong!)
 * 16G RAM
 * Gigabyte GTX 960 Video Card
 
+
 ## Virtual
-### newton - virtual CentOS 7 - Plex/DNS
+### haproxy - CentOS 7 - RP/LB
+* HAProxy service for reverse proxying traffic internal and external and routing into Docker Swarm
+
+
+### newton - CentOS 7 - Plex/DNS
 * Plex media server
 * Pi-hole
 * dnsmasq DNS server
 
-### archimedes and aristotle virtual Centos 7 
-Docker Swarm
-* docker-ce
-* running a bunch of docker containers (changes all the time) including:
-  * owncloud owncloud.org
-  * GOGS gogs.io
-  * munin munin-monitoring.org
-  * keybox sshkeybox.org
-  * tautulli jonnywong16.github.io/plexpy
-  * lounge IRC github.com/thelounge/lounge
-  * organizr github.com/causefx/Organizr
-  * ombi/PlexRequests github.com/tidusjar/Ombi
-  * Other personal media applications
-  * Previously also ran a Rocketchat server and a Guacamole server but these have gone away in favor of other services
 
-### euler - virtual Centos 7 - Database
+### archimedes/aristotle - Centos 7 - Docker
+* docker-ce in Swarm mode
+* Containerized applications:
+  * GOGS
+  * tautulli
+  * Calibre Web
+  * Portainer
+  * Wordpress
+  * Organizr
+  * Others...
+* Retired apps:
+  * Rocketchat
+  * Guacamole
+  * Munin
+  * Monica
+  * Ombi
+  * Lounge IRC
+  * keybox
+
+
+### euler - CentOS 7 - Database
 * MariaDB
-* mongodb
+* MongoDB
 * PostgreSQL
 
-### fermi - virtual CentOS 7 - Backups
+
+### fermi - CentOS 7 - Backups
 * bacula
 
-### edison - virtual Windows 10 - VDI for remote access 
-* as needed
+
+### edison - Windows 10 - VDI
+* Usually offline

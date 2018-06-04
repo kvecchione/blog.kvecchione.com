@@ -14,27 +14,26 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Automate Everything
+name: Automate Everything
 email: kjvecchione@gmail.com
 author: Kevin Vecchione
-description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.vecchione.us" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: kvecchione
+copyright: 2018
 
 # Build settings
-markdown: kramdown
-theme: jekyll-theme-hacker
+theme: jekyll-clean-dark
 plugins:
   - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+social:
+  twitter: 'audiosyncrasy'
+  github: 'kvecchione'
+  linkedin: 'kvecchione'
+  rss: feed.xml
+permalink: /:year/:month/:title
+markdown: kramdown
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
+  hard_wrap: true
+exclude: ['README.md', 'LICENSE']

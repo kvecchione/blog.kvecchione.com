@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: page 
 title: About
-permalink: /about/
+
 ---
+
+I'm Kevin. I like technology and sometimes I like to write about it.

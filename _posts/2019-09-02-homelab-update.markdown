@@ -52,7 +52,7 @@ author: Kevin Vecchione
 * OpenVPN-AS Server
   * Have tried containerizing OpenVPN-AS, but it was more of a pain than it was worth due to the certificate renewal process with LetsEncrypt.
 
-### kube01-03 - CUbuntu 18.04 - Kubernetes Nodes
+### kube01-03 - Ubuntu 18.04 - Kubernetes Nodes
 * docker-ce
 * Kubernetes 1.14 (kubeadm)
 * Containerized applications:

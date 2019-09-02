@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Homelab (updated)"
-date:   2018-06-03 00:00:00 -0400
+date:   2019-09-02 00:01:00 -0400
 categories: computing
 author: Kevin Vecchione
 ---

@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "The Homelab (updated)"
+date:   2018-06-03 00:00:00 -0400
+categories: computing
+author: Kevin Vecchione
+---
+
+## Physical
+### skynet - Google WiFi Mesh
+* 3x Google WiFi AP, wired backbone
+
+### davinci - MacBook Pro 15 (2014)
+* Daily driver
+* The best MacBook ever made, but getting old
+
+### maxwell - MacBook Pro 13 (2010) (offline)
+* Drobo Gen1 (USB) Network Gateway
+* OSX Remote Desktop
+
+### tesla - Dell T20 server
+* Quad core Xeon E3-1225
+* 16GB RAM
+* XCP-NG 7.6.0
+
+### edison and volta
+* 2 x Dell Optiplex 7020 SFF i5-4590 (4c)
+* 256GB SSD
+* 16GB RAM
+* XCP-NG 7.6.0
+
+### galileo - Drobo 5N NAS
+* Media NAS
+* 4 x 4TB WD RED HDD
+
+### einstein - Windows 10 - Gaming Desktop
+* Intel i5 2500 (still going strong!)
+* 16G RAM
+* Gigabyte GTX 960 Video Card
+
+## Virtual
+### lb01 - Ubuntu 18.04 - RP/LB
+* HAProxy service for reverse proxying traffic internal and external and routing into Kubernetes
+
+### dns01 - Ubuntu 18.04 - CoreDNS
+* CoreDNS server
+
+### newton - Ubuntu 18.04 - Plex
+* Plex Media Server
+
+### vpn01 - Ubuntu 18.04 - OpenVPN
+* OpenVPN-AS Server
+  * Have tried containerizing OpenVPN-AS, but it was more of a pain than it was worth due to the certificate renewal process with LetsEncrypt.
+
+### kube01-03 - CUbuntu 18.04 - Kubernetes Nodes
+* docker-ce
+* Kubernetes 1.14 (kubeadm)
+* Containerized applications:
+  * Traefik (routing)
+  * Kubernetes Dashboard
+  * Gitea
+  * Tautulli
+  * Calibre Web
+  * Xen Orchestra Administrator (XOA)
+  * Wekan
+  * Bookstack
+  * Invoice Ninja
+  * Shinobi
+  * Organizr
+  * MySQL (shared)
+  * The Lounge (IRC)
+  * Ombi
+  * ddclient
+  * ...lots
+
+### fermi - Ubuntu 18.04 - Ansible/Backups
+* Runs various backup jobs and Ansible automation 

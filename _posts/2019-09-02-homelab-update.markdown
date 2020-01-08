@@ -14,7 +14,7 @@ author: Kevin Vecchione
 
 ### ironman - MacBook Pro 16 (2019)
 * Daily driver
-* The best MacBook ever made, but getting old
+* Thank you Apple for finally listening
 
 ### maxwell - MacBook Pro 13 (2010) (offline)
 * Drobo Gen1 (USB) Network Gateway

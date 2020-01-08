@@ -6,11 +6,13 @@ categories: computing
 author: Kevin Vecchione
 ---
 
+(last updated: 1/7/20)
+
 ## Physical
 ### skynet - Google WiFi Mesh
 * 3x Google WiFi AP, wired backbone
 
-### davinci - MacBook Pro 15 (2014)
+### ironman - MacBook Pro 16 (2019)
 * Daily driver
 * The best MacBook ever made, but getting old
 
@@ -39,20 +41,23 @@ author: Kevin Vecchione
 * Gigabyte GTX 960 Video Card
 
 ## Virtual
+### xoa - Xen Orchestra Appliance
+* XOA Web Management Interface for XCP-NG
+
 ### lb01 - Ubuntu 18.04 - RP/LB
 * HAProxy service for reverse proxying traffic internal and external and routing into Kubernetes
 
-### dns01 - Ubuntu 18.04 - CoreDNS
-* CoreDNS server
+### dns01 - Ubuntu 18.04 - PowerDNS
+* PowerDNS server
 
-### newton - Ubuntu 18.04 - Plex
+### plex01 - Ubuntu 18.04 - Plex
 * Plex Media Server
 
 ### vpn01 - Ubuntu 18.04 - OpenVPN
 * OpenVPN-AS Server
   * Have tried containerizing OpenVPN-AS, but it was more of a pain than it was worth due to the certificate renewal process with LetsEncrypt.
 
-### kube01-03 - Ubuntu 18.04 - Kubernetes Nodes
+### kube[ms]01-03[ab] - Ubuntu 18.04 - Kubernetes Nodes
 * docker-ce
 * Kubernetes 1.14 (kubeadm)
 * Containerized applications:
@@ -61,7 +66,6 @@ author: Kevin Vecchione
   * Gitea
   * Tautulli
   * Calibre Web
-  * Xen Orchestra Administrator (XOA)
   * Wekan
   * Bookstack
   * Invoice Ninja
@@ -73,5 +77,8 @@ author: Kevin Vecchione
   * ddclient
   * ...lots
 
-### fermi - Ubuntu 18.04 - Ansible/Backups
-* Runs various backup jobs and Ansible automation 
+### gluster01-03 - Ubuntu 18.04 - GlusterFS
+* GlusterFS Cluster
+
+### backup01 - Ubuntu 18.04 - Backups
+* Runs various backup jobs

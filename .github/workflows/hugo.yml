@@ -29,3 +29,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: live
           publish_dir: ./public
+          cname: blog.kvecchione.com

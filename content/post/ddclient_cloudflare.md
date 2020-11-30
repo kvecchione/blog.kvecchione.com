@@ -25,8 +25,8 @@ protocol=cloudflare
 server=api.cloudflare.com/client/v4
 login=<email>
 password=<password>
-zone=kvecchione.com
-ddns.kvecchione.com
+zone=<zone>
+<record>
 ```
 
 Hope this helps you out!

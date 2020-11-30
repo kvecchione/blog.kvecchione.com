@@ -1,0 +1,23 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+<main id="content" class="content" role="main">
+    {{ $pages := .Pages }}
+    {{ if .IsHome }}
+    {{ $pages = .Site.RegularPages }}
+    {{ end }}
+    {{ $paginator := .Paginate $pages }}
+
+    <div class="extra-pagination inner">
+        {{ partial "pagination.html" $paginator }}
+    </div>
+
+    {{ range $index, $page := $paginator.Pages }}
+        {{ .Render "li" }}
+    {{ end }}
+
+    {{ partial "pagination.html" $paginator }}
+
+</main>
+
+{{ partial "footer.html" . }}

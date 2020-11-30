@@ -1,0 +1,31 @@
+BaseUrl= "https://blog.kvecchione.com/"
+LanguageCode= "en-US"
+Title= "Automate Everything"
+paginate = 5
+DisqusShortname = ""
+Copyright = "by Kevin Vecchione"
+canonifyurls = true
+
+
+[author]
+  name = "kevin"
+
+[permalinks]
+  post = "/post/:slug"
+
+[params]
+  description = ""
+  # cover = "images/cog-512.png"
+  author = "kevin"
+  authorlocation = "Earth"
+  authorwebsite = "https://www.kvecchione.com"
+  bio= "About Me"
+  #logo = "images/cog-512.png"
+  googleAnalyticsUserID = "G-CEMVCX9GBW"
+  # Optional RSS-Link, if not provided it defaults to the standard index.xml
+  RSSLink = "index.xml"
+  githubName = "kvecchione"
+  linkedinName = "umkvec"
+  # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
+  hideHUGOSupport = true
+  mainSections = ["post"]

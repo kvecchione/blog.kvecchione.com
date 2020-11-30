@@ -1,0 +1,28 @@
+    <footer class="site-footer clearfix">
+        <div align="center">
+        {{ if .Site.Params.githubName }}
+            <a href="https://github.com/{{ .Site.Params.githubName }}">
+                <span class="icon-github" style="color:black;font-size:2em"></span>
+            </a>
+        {{end}}
+        &nbsp;
+        {{ if .Site.Params.linkedinName }}
+            <a href="https://linkedin.com/{{ .Site.Params.linkedinName }}">
+                <span class="icon-linkedin" style="color:black;font-size:2em"></span>
+            </a>
+        {{end}}
+        &nbsp;
+        <a href="/index.xml">
+            <span class="icon-feed" style="color:black;font-size:2em"></span>
+        </a>
+        </div>
+        <div align="center">
+            <section class="copyright"><a href="">{{.Site.Title}}</a>  {{.Site.Copyright}}</section>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/particles.min.js"></script>
+    <script type="text/javascript" src="/js/particles.js"></script>  
+
+</body>
+</html>

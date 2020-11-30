@@ -1,0 +1,141 @@
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content=" ddclient and Cloudflare &middot;  Automate Everything" />
+  	<meta property="og:site_name" content="Automate Everything" />
+  	<meta property="og:url" content="https://blog.kvecchione.com/post/ddclient-cloudflare/" />
+    
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2019-09-02T00:00:00Z" />
+
+    
+    
+
+  <title>
+     ddclient and Cloudflare &middot;  Automate Everything
+  </title>
+
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://blog.kvecchione.com/images/favicon.png">
+    <link rel="icon" href="https://blog.kvecchione.com/images/favicon.png" type="image/x-icon">
+	  <link rel="apple-touch-icon" href="https://blog.kvecchione.com/images/apple-touch-icon.png" />
+    
+    <link rel="stylesheet" type="text/css" href="https://blog.kvecchione.com/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+        <link href="index.xml" rel="alternate" type="application/rss+xml" title="Automate Everything" />
+    
+    <meta name="generator" content="Hugo 0.76.5" />
+
+    <link rel="canonical" href="https://blog.kvecchione.com/post/ddclient-cloudflare/" />
+
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEMVCX9GBW"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CEMVCX9GBW');
+      </script>
+     
+</head>
+
+
+
+
+<div id="particles-js"></div>
+<div class="site-wrapper">
+
+<header class="main-header no-cover">
+    <nav class="main-nav overlay clearfix">
+        
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">
+                <a href="https://blog.kvecchione.com/">Automate Everything</a>
+            </h1>
+            <h2 class="page-description"></h2>
+        </div>
+    </div>
+</header>
+
+
+<main id="content" class="content" role="main">
+  <article class="post post">
+    <header class="post-header">
+      <h1 class="post-title">ddclient and Cloudflare</h1>
+        <section class="post-meta">
+        
+	        <time class="post-date" datetime="2019-09-02">
+            2019-09-02
+          </time>
+        
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>I use a ddclient container in my Kubernetes cluster to maintain my IP with Cloudflare&rsquo;s free DNS hosting. I recently noticed issues with my configuration of ddclient for use with DNS hosted in Cloudflare. For anyone that finds this and sees this error, this is what resolved it for me:</p>
+<p>Error:
+<code>WARNING:  file /var/cache/ddclient/ddclient.cache, line 3: Invalid Value for keyword 'ip' = ''</code></p>
+<p>It appears this is due to the Cloudflare API URL changing, so ddclient can&rsquo;t get the current IP.</p>
+<p>New config file:</p>
+<pre><code>daemon=300
+syslog=yes
+ssl=yes
+use=web,web=ipinfo.io/ip
+protocol=cloudflare
+# **This is the important change**
+server=api.cloudflare.com/client/v4
+login=&lt;email&gt;
+password=&lt;password&gt;
+zone=kvecchione.com
+ddns.kvecchione.com
+</code></pre><p>Hope this helps you out!</p>
+
+    </section>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <div align="center">
+        
+            <a href="https://github.com/kvecchione">
+                <span class="icon-github" style="color:black;font-size:2em"></span>
+            </a>
+        
+        &nbsp;
+        
+            <a href="https://linkedin.com/umkvec">
+                <span class="icon-linkedin" style="color:black;font-size:2em"></span>
+            </a>
+        
+        &nbsp;
+        <a href="https://blog.kvecchione.com/index.xml">
+            <span class="icon-feed" style="color:black;font-size:2em"></span>
+        </a>
+        </div>
+        <div align="center">
+            <section class="copyright"><a href="">Automate Everything</a>  by Kevin Vecchione</section>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://blog.kvecchione.com/js/jquery.js"></script>
+    <script type="text/javascript" src="https://blog.kvecchione.com/js/particles.min.js"></script>
+    <script type="text/javascript" src="https://blog.kvecchione.com/js/particles.js"></script>  
+
+</body>
+</html>
+

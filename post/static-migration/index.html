@@ -4,16 +4,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  	<meta property="og:title" content=" Automate Everything" />
+  	<meta property="og:title" content=" Static Website Migration &middot;  Automate Everything" />
   	<meta property="og:site_name" content="Automate Everything" />
-  	<meta property="og:url" content="https://blog.kvecchione.com/" />
+  	<meta property="og:url" content="https://blog.kvecchione.com/post/static-migration/" />
     
     
-    <meta property="og:type" content="website" />
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2018-06-03T00:00:00Z" />
+
+    
     
 
   <title>
-     Automate Everything
+     Static Website Migration &middot;  Automate Everything
   </title>
 
     <meta name="description" content="" />
@@ -34,7 +38,7 @@
     
     <meta name="generator" content="Hugo 0.76.5" />
 
-    <link rel="canonical" href="https://blog.kvecchione.com/" />
+    <link rel="canonical" href="https://blog.kvecchione.com/post/static-migration/" />
 
     
       
@@ -48,6 +52,8 @@
       </script>
      
 </head>
+
+
 
 
 <div id="particles-js"></div>
@@ -69,165 +75,7 @@
 
 
 <main id="content" class="content" role="main">
-    
-    
-    
-    
-    
-
-    <div class="extra-pagination inner">
-        <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-    </div>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-      <h1 class="post-title">The Homelab</h1>
-        <section class="post-meta">
-        
-	        <time class="post-date" datetime="2020-11-21">
-            2020-11-21
-          </time>
-        
-        </section>
-    </header>
-
-    <section class="post-content">
-      <p>I&rsquo;m going to try update this post over time since I get a lot of questions about my home lab. I change things fairly frequently as I test out new technologies and tools, so I&rsquo;ll try to keep the data here updated as best I can so you can see what I&rsquo;m working on.</p>
-<h2 id="physical">Physical</h2>
-<h4 id="the-cluster">The Cluster</h4>
-<p>Proxmox VE builds in Ceph distributed storage, so I&rsquo;ve hyperconverged by having a 256GB SSD in each machine and running the VMs off the distributed volume. I also run CephFS on top of this volume for Kubernetes shared storage.</p>
-<h5 id="pve01">pve01</h5>
-<ul>
-<li>Dell PowerEdge T20 Server</li>
-<li>Xeon E3-1225 (4c)</li>
-<li>16GB RAM</li>
-<li>Proxmox VE 6.2</li>
-</ul>
-<h5 id="pve02pve03">pve02/pve03</h5>
-<ul>
-<li>Dell Optiplex 7020 SFF i5-4590 (4c)</li>
-<li>256GB SSD</li>
-<li>16GB RAM</li>
-<li>Proxmox VE 6.2</li>
-</ul>
-<h3 id="nas">NAS</h3>
-<h5 id="nas01---synology-ds1819-nas">nas01 - Synology DS1819+ NAS</h5>
-<ul>
-<li>Media NAS</li>
-<li>6 x 4TB WD RED HDD (4 active, 2 hot spares)</li>
-<li>Docker for Homebridge</li>
-<li>Plex (backup)</li>
-</ul>
-<h3 id="endpoints">Endpoints</h3>
-<h5 id="einstein---windows-10---gaming-desktop">einstein - Windows 10 - Gaming Desktop</h5>
-<ul>
-<li>Intel i5 2500 (Sandy Bridge still going strong since 2012!)</li>
-<li>16G RAM</li>
-<li>Gigabyte GTX 960 Video Card</li>
-</ul>
-<h5 id="ironman---macbook-pro-16-2019">ironman - MacBook Pro 16 (2019)</h5>
-<ul>
-<li>Daily Driver</li>
-</ul>
-<h2 id="virtual">Virtual</h2>
-<h5 id="kmsnn---ubuntu-1804---kubernetes-nodes">k[ms][nn] - Ubuntu 18.04 - Kubernetes Nodes</h5>
-<ul>
-<li>3-node Kubernetes 1.18 cluster with RKE2</li>
-<li>Containerized applications:
-<ul>
-<li>Nginx Ingress (internal and external)</li>
-<li>Certificate Manager</li>
-<li>MetalLB</li>
-<li>Kubernetes Dashboard</li>
-<li>OpenFaaS</li>
-<li>Harbor</li>
-<li>ArgoCD</li>
-<li>Gitea</li>
-<li>Tautulli</li>
-<li>Calibre Web</li>
-<li>Wekan</li>
-<li>Bookstack</li>
-<li>Invoice Ninja</li>
-<li>MySQL (shared)</li>
-<li>Postgres (shared)</li>
-<li>MongoDB (shared)</li>
-<li>Ombi</li>
-<li>Minio</li>
-<li>Openeats</li>
-<li>ddclient</li>
-<li>&hellip;lots more</li>
-</ul>
-</li>
-</ul>
-<h5 id="lb01---alpine-311---haproxy">lb01 - Alpine 3.11 - HAProxy</h5>
-<ul>
-<li>HTTP/TCP proxy for Kubernetes</li>
-</ul>
-<h5 id="dns01---debian-10---pihole-dns">dns01 - Debian 10 - PiHole DNS</h5>
-<ul>
-<li>PiHole DNS/Adblock server</li>
-</ul>
-<h5 id="plex01---ubuntu-1804---plex">plex01 - Ubuntu 18.04 - Plex</h5>
-<ul>
-<li>Plex Media Server</li>
-</ul>
-<h5 id="backup01---ubuntu-1804---backups">backup01 - Ubuntu 18.04 - Backups</h5>
-<ul>
-<li>Runs various backup jobs</li>
-</ul>
-<h2 id="3d-printer">3D Printer</h2>
-<p>Creality Ender 5 Pro</p>
-<ul>
-<li>Embedded Raspberry Pi 4 with OctoPrint</li>
-</ul>
-
-    </section>
-</article>
-    
-        
-<article class="post post">
-    <header class="post-header">
-      <h1 class="post-title">ddclient and Cloudflare</h1>
-        <section class="post-meta">
-        
-	        <time class="post-date" datetime="2019-09-02">
-            2019-09-02
-          </time>
-        
-        </section>
-    </header>
-
-    <section class="post-content">
-      <p>I use a ddclient container in my Kubernetes cluster to maintain my IP with Cloudflare&rsquo;s free DNS hosting. I recently noticed issues with my configuration of ddclient for use with DNS hosted in Cloudflare. For anyone that finds this and sees this error, this is what resolved it for me:</p>
-<p>Error:
-<code>WARNING:  file /var/cache/ddclient/ddclient.cache, line 3: Invalid Value for keyword 'ip' = ''</code></p>
-<p>It appears this is due to the Cloudflare API URL changing, so ddclient can&rsquo;t get the current IP.</p>
-<p>New config file:</p>
-<pre><code>daemon=300
-syslog=yes
-ssl=yes
-use=web,web=ipinfo.io/ip
-protocol=cloudflare
-# **This is the important change**
-server=api.cloudflare.com/client/v4
-login=&lt;email&gt;
-password=&lt;password&gt;
-zone=kvecchione.com
-ddns.kvecchione.com
-</code></pre><p>Hope this helps you out!</p>
-
-    </section>
-</article>
-    
-        
-<article class="post post">
+  <article class="post post">
     <header class="post-header">
       <h1 class="post-title">Static Website Migration</h1>
         <section class="post-meta">
@@ -250,17 +98,8 @@ ddns.kvecchione.com
 
     </section>
 </article>
-    
-
-    <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
 
 </main>
-
     <footer class="site-footer clearfix">
         <div align="center">
         

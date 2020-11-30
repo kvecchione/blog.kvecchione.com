@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automate Everything</title>
+    <link>https://blog.kvecchione.com/</link>
+    <description>Recent content on Automate Everything</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>by Kevin Vecchione</copyright>
+    <lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kvecchione.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Homelab</title>
+      <link>https://blog.kvecchione.com/post/homelab/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.kvecchione.com/post/homelab/</guid>
+      <description>I&amp;rsquo;m going to try update this post over time since I get a lot of questions about my home lab. I change things fairly frequently as I test out new technologies and tools, so I&amp;rsquo;ll try to keep the data here updated as best I can so you can see what I&amp;rsquo;m working on.
+Physical The Cluster Proxmox VE builds in Ceph distributed storage, so I&amp;rsquo;ve hyperconverged by having a 256GB SSD in each machine and running the VMs off the distributed volume.</description>
+    </item>
+    
+    <item>
+      <title>ddclient and Cloudflare</title>
+      <link>https://blog.kvecchione.com/post/ddclient-cloudflare/</link>
+      <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.kvecchione.com/post/ddclient-cloudflare/</guid>
+      <description>I use a ddclient container in my Kubernetes cluster to maintain my IP with Cloudflare&amp;rsquo;s free DNS hosting. I recently noticed issues with my configuration of ddclient for use with DNS hosted in Cloudflare. For anyone that finds this and sees this error, this is what resolved it for me:
+Error: WARNING: file /var/cache/ddclient/ddclient.cache, line 3: Invalid Value for keyword &#39;ip&#39; = &#39;&#39;
+It appears this is due to the Cloudflare API URL changing, so ddclient can&amp;rsquo;t get the current IP.</description>
+    </item>
+    
+    <item>
+      <title>Static Website Migration</title>
+      <link>https://blog.kvecchione.com/post/static-migration/</link>
+      <pubDate>Sun, 03 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.kvecchione.com/post/static-migration/</guid>
+      <description>I&amp;rsquo;ve been hosting my websites at home for some time now, mostly with Wordpress, and I&amp;rsquo;ve been pretty happy with it. I recently migrated my Wordpress sites from Apache to nginx then to Docker, each an improvement along the way, but then I had an idea to put one of my sites (www.vecchione.us) on Amazon S3/Google Cloud Storage to help speed it up and help secure it better, but since my site is Wordpress, I didn&amp;rsquo;t think I could - well I was wrong.</description>
+    </item>
+    
+  </channel>
+</rss>

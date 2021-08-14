@@ -71,10 +71,10 @@ I'm going to try update this post over time since I get a lot of questions about
   * ...lots more
 
 ##### bastion01 - Ubuntu 20.4 - SSH Bastion
-* SSH bastion accessible via Zerotier
+* SSH bastion accessible via [Zerotier](https://www.zerotier.com/)
 
 ##### lb01 - Alpine 3.11 - HAProxy
-* HTTP/TCP proxy for Kubernetes
+* [HAProxy](http://www.haproxy.org/) HTTP/TCP proxy for Kubernetes
 * [cloudflared](https://github.com/cloudflare/cloudflared) with Argo Tunnels
 
 ##### dns01 - Debian 10 LXC - PiHole DNS

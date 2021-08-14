@@ -1,7 +1,7 @@
 ---
 title: "The Homelab"
 slug: "homelab"
-date: "2020-11-21"
+date: "2021-08-14"
 author: "kevin"
 draft: false
 image: ""
@@ -11,24 +11,24 @@ I'm going to try update this post over time since I get a lot of questions about
 
 ## Physical
 #### The Cluster
-Proxmox VE builds in Ceph distributed storage, so I've hyperconverged by having a 256GB SSD in each machine and running the VMs off the distributed volume. I also run CephFS on top of this volume for Kubernetes shared storage. 
+[Proxmox VE](https://www.proxmox.com/en/) builds in [Ceph](https://docs.ceph.com/en/latest/) distributed storage, so I've hyperconverged by having a 256GB SSD in each machine and running the VMs off the distributed volume. I also run CephFS on top of this volume for Kubernetes shared storage. 
 
 ##### pve01
 * Dell PowerEdge T20 Server
 * Xeon E3-1225 (4c)
 * 16GB RAM
-* Proxmox VE 6.2
+* Proxmox VE 6.4
 
 ##### pve02/pve03
 * Dell Optiplex 7020 SFF i5-4590 (4c)
 * 256GB SSD
 * 16GB RAM
-* Proxmox VE 6.2
+* Proxmox VE 6.4
 
 ### NAS
 ##### nas01 - Synology DS1819+ NAS
 * Media NAS
-* 6 x 4TB WD RED HDD (4 active, 2 hot spares)
+* 6 x 4TB WD RED HDD (5 active, 1 hot spare)
 * Docker for Homebridge
 * Plex (backup)
 
@@ -41,40 +41,50 @@ Proxmox VE builds in Ceph distributed storage, so I've hyperconverged by having 
 ##### ironman - MacBook Pro 16 (2019)
 * Daily Driver
 
+##### dns02
+* Raspberri Pi Model B
+* [PiHole](https://pi-hole.net/) DNS+Adblock
+
 ## Virtual
-##### k[ms][nn] - Ubuntu 18.04 - Kubernetes Nodes
-* 3-node Kubernetes 1.18 cluster with RKE2
+##### k[n] - Ubuntu 20.04 - Kubernetes Nodes
+* 5 manager Kubernetes 1.21 cluster with [RKE2](https://docs.rke2.io/)
 * Containerized applications:
-  * Nginx Ingress (internal and external)
-  * Certificate Manager
-  * MetalLB
-  * Kubernetes Dashboard
-  * OpenFaaS
-  * Harbor
-  * ArgoCD
-  * Gitea
-  * Tautulli
-  * Calibre Web
-  * Wekan
-  * Bookstack
-  * Invoice Ninja
-  * MySQL (shared)
-  * Postgres (shared)
-  * MongoDB (shared)
-  * Ombi
-  * Minio
-  * Openeats
-  * ddclient
+  * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/) (internal and external)
+  * [Cert-Manager](https://cert-manager.io/docs/)
+  * [MetalLB](https://metallb.universe.tf/)
+  * [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+  * [OpenFaaS](https://www.openfaas.com/)
+  * [Harbor](https://goharbor.io/)
+  * [Gitea](https://gitea.io/en-us/)
+  * [OneDev](https://github.com/theonedev/onedev)
+  * [Tautulli](https://tautulli.com/)
+  * [Calibre Web](https://github.com/janeczku/calibre-web)
+  * [Bookstack](https://www.bookstackapp.com/)
+  * [InvoiceNinja](https://www.invoiceninja.com/)
+  * [MySQL](https://www.mysql.com/)(shared)
+  * [Postgres](https://www.postgresql.org/) (shared)
+  * [MongoDB](https://www.mongodb.com/) (shared)
+  * [InfluxDB](https://www.influxdata.com/)
+  * [Ombi](https://ombi.io/)
+  * [Minio](https://min.io/)
+  * [Openeats](https://github.com/open-eats/OpenEats)
   * ...lots more
+
+##### bastion01 - Ubuntu 20.4 - SSH Bastion
+* SSH bastion accessible via Zerotier
 
 ##### lb01 - Alpine 3.11 - HAProxy
 * HTTP/TCP proxy for Kubernetes
+* [cloudflared](https://github.com/cloudflare/cloudflared) with Argo Tunnels
 
-##### dns01 - Debian 10 - PiHole DNS
-* PiHole DNS/Adblock server
+##### dns01 - Debian 10 LXC - PiHole DNS
+* [PiHole](https://pi-hole.net/) DNS/Adblock server
+
+##### monitor01 - Alpine 3.14 LXC - Monitoring
+* Runs custom Python monitoring scripts with integrated Slack alerts
 
 ##### plex01 - Ubuntu 18.04 - Plex
-* Plex Media Server
+* [Plex](https://www.plex.tv/) Media Server
 
 ##### backup01 - Ubuntu 18.04 - Backups
 * Runs various backup jobs
@@ -82,4 +92,6 @@ Proxmox VE builds in Ceph distributed storage, so I've hyperconverged by having 
 ## 3D Printer
 
 Creality Ender 5 Pro
-* Embedded Raspberry Pi 4 with OctoPrint
+* Embedded Raspberry Pi 4 with [OctoPrint](https://octoprint.org/)
+
+(Updated 8/14/21)

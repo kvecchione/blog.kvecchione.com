@@ -48,7 +48,7 @@ I'm going to try update this post over time since I get a lot of questions about
 
 ## Virtual Machines
 ##### k[mw]<n> - Ubuntu 20.04 - Kubernetes Nodes
-* Kubernetes 1.23 cluster with [k3s](https://docs.k3s.io/)
+* Kubernetes 1.23 cluster with [RKE2](https://docs.rke2.io/)
 * Containerized applications:
   * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/) (internal and external)
   * [Cert-Manager](https://cert-manager.io/docs/)

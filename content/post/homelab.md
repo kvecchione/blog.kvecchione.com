@@ -17,13 +17,13 @@ I'm going to try update this post over time since I get a lot of questions about
 * Dell PowerEdge T20 Server
 * Xeon E3-1225 (4c)
 * 16GB RAM
-* Proxmox VE 6.4
+* Proxmox VE 7.1
 
 ##### pve02/pve03
 * Dell Optiplex 7020 SFF i5-4590 (4c)
 * 256GB SSD
 * 16GB RAM
-* Proxmox VE 6.4
+* Proxmox VE 7.1
 
 ### NAS
 ##### nas01 - Synology DS1819+ NAS
@@ -31,6 +31,7 @@ I'm going to try update this post over time since I get a lot of questions about
 * 6 x 4TB WD RED HDD (5 active, 1 hot spare)
 * Docker for Homebridge
 * Plex (backup)
+* Minio
 
 ### Endpoints
 ##### einstein - Windows 10 - Gaming Desktop
@@ -45,9 +46,9 @@ I'm going to try update this post over time since I get a lot of questions about
 * Raspberri Pi Model B
 * [PiHole](https://pi-hole.net/) DNS+Adblock
 
-## Virtual
-##### k[n] - Ubuntu 20.04 - Kubernetes Nodes
-* 5 manager Kubernetes 1.21 cluster with [RKE2](https://docs.rke2.io/)
+## Virtual Machines
+##### k[mw]<n> - Ubuntu 20.04 - Kubernetes Nodes
+* Kubernetes 1.23 cluster with [k3s](https://docs.k3s.io/)
 * Containerized applications:
   * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/) (internal and external)
   * [Cert-Manager](https://cert-manager.io/docs/)
@@ -70,28 +71,33 @@ I'm going to try update this post over time since I get a lot of questions about
   * [Openeats](https://github.com/open-eats/OpenEats)
   * ...lots more
 
-##### bastion01 - Ubuntu 20.4 - SSH Bastion
+## LXC Containers
+##### bastion01 - Ubuntu 20.04 - SSH Bastion
 * SSH bastion accessible via [Zerotier](https://www.zerotier.com/)
 
-##### lb01 - Alpine 3.11 - HAProxy
+##### lb01 - Alpine 3.15 - HAProxy
 * [HAProxy](http://www.haproxy.org/) HTTP/TCP proxy for Kubernetes
 * [cloudflared](https://github.com/cloudflare/cloudflared) with Argo Tunnels
 
-##### dns01 - Debian 10 LXC - PiHole DNS
+##### dns01 - Debian 10 - PiHole DNS
 * [PiHole](https://pi-hole.net/) DNS/Adblock server
 
-##### monitor01 - Alpine 3.14 LXC - Monitoring
+##### admin01 - Alpine 3.15 - Admin/Backup/Monitoring
 * Runs custom Python monitoring scripts with integrated Slack alerts
 
-##### plex01 - Ubuntu 18.04 - Plex
+##### plex01 - Ubuntu 20.04 - Plex
 * [Plex](https://www.plex.tv/) Media Server
 
-##### backup01 - Ubuntu 18.04 - Backups
-* Runs various backup jobs
+##### teleport01 - Ubuntu 20.04 - Teleport
+* [Teleport](https://goteleport.com/) Access Server
+
+##### mysql01 - Alpine 3.15 - MariaDB
+* MariaDB database server
+
 
 ## 3D Printer
 
 Creality Ender 5 Pro
 * Embedded Raspberry Pi 4 with [OctoPrint](https://octoprint.org/)
 
-(Updated 8/14/21)
+(Updated 12/3/22)

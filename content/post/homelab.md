@@ -75,7 +75,7 @@ I'm going to try update this post over time since I get a lot of questions about
 ### Other Endpoints
 
 ##### dns02 - Raspbian - Secondary DNS
-* Raspberri Pi Model B
+* Raspberry Pi Model B
 * [Adguard](https://adguard.com/) DNS+Adblock
 
 ### 3D Printer

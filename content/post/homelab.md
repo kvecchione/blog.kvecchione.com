@@ -11,19 +11,14 @@ I'm going to try update this post over time since I get a lot of questions about
 
 ## Physical
 #### The Cluster
-[Proxmox VE](https://www.proxmox.com/en/) builds in [Ceph](https://docs.ceph.com/en/latest/) distributed storage, so I've hyperconverged by having a 256GB SSD in each machine and running the VMs off the distributed volume. I also run CephFS on top of this volume for Kubernetes shared storage. 
+[Proxmox VE](https://www.proxmox.com/en/) builds in [Ceph](https://docs.ceph.com/en/latest/) distributed storage, so I've hyperconverged by having a 1TB NVMe SSD in each machine and running the VMs off the distributed volume. I also run CephFS on top of this volume for Kubernetes shared storage. 
 
-##### pve01
-* Dell PowerEdge T20 Server
-* Xeon E3-1225 (4c)
-* 16GB RAM
-* Proxmox VE 7.1
-
-##### pve02/pve03
-* Dell Optiplex 7020 SFF i5-4590 (4c)
-* 256GB SSD
-* 16GB RAM
-* Proxmox VE 7.1
+##### prox01-03
+* 3x Dell Optiplex 7060 MFF
+* i7-8700T hex-core
+* 32GB RAM
+* 1TB NVMe
+* Proxmox VE 8.x
 
 ### NAS
 ##### nas01 - Synology DS1819+ NAS
@@ -33,26 +28,13 @@ I'm going to try update this post over time since I get a lot of questions about
 * Plex (backup)
 * Minio
 
-### Endpoints
-##### einstein - Windows 10 - Gaming Desktop
-* Intel i5 2500 (Sandy Bridge still going strong since 2012!)
-* 16G RAM
-* Gigabyte GTX 960 Video Card
+## Proxmox LXC Containers
 
-##### ironman - MacBook Pro 16 (2019)
-* Daily Driver
-
-##### dns02
-* Raspberri Pi Model B
-* [PiHole](https://pi-hole.net/) DNS+Adblock
-
-## Virtual Machines
-##### k[mw]<n> - Ubuntu 20.04 - Kubernetes Nodes
-* Kubernetes 1.23 cluster with [RKE2](https://docs.rke2.io/)
+##### k<n> - Ubuntu 20.04 - Kubernetes Multi-master Cluster
+* Kubernetes 1.24 cluster with [RKE2](https://docs.rke2.io/)
 * Containerized applications:
   * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/) (internal and external)
   * [Cert-Manager](https://cert-manager.io/docs/)
-  * [MetalLB](https://metallb.universe.tf/)
   * [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
   * [OpenFaaS](https://www.openfaas.com/)
   * [Harbor](https://goharbor.io/)
@@ -71,15 +53,14 @@ I'm going to try update this post over time since I get a lot of questions about
   * [Openeats](https://github.com/open-eats/OpenEats)
   * ...lots more
 
-## LXC Containers
 ##### bastion01 - Ubuntu 20.04 - SSH Bastion
 * SSH bastion accessible via [Zerotier](https://www.zerotier.com/)
 
-##### lb01 - Alpine 3.15 - HAProxy
+##### lb01 - Ubuntu 20.04 - Load Balancer
 * [HAProxy](http://www.haproxy.org/) HTTP/TCP proxy for Kubernetes
 * [cloudflared](https://github.com/cloudflare/cloudflared) with Argo Tunnels
 
-##### dns01 - Debian 10 - PiHole DNS
+##### dns01 - Ubuntu 22.04 - Primary DNS
 * [PiHole](https://pi-hole.net/) DNS/Adblock server
 
 ##### admin01 - Alpine 3.15 - Admin/Backup/Monitoring
@@ -91,13 +72,24 @@ I'm going to try update this post over time since I get a lot of questions about
 ##### teleport01 - Ubuntu 20.04 - Teleport
 * [Teleport](https://goteleport.com/) Access Server
 
+##### kasm01 - Ubuntu 20.04 - Teleport
+* [Kasm](https://kasmweb.com/) VDI
+
 ##### mysql01 - Alpine 3.15 - MariaDB
 * MariaDB database server
 
+##### pgsql01 - Alpine 3.15 - PostgreSQL
+* PostgreSQL database server
+
+### Other Endpoints
+
+##### dns02 - Raspbian - Secondary DNS
+* Raspberri Pi Model B
+* [Adguard](https://adguard.com/) DNS+Adblock
 
 ## 3D Printer
 
 Creality Ender 5 Pro
 * Embedded Raspberry Pi 4 with [OctoPrint](https://octoprint.org/)
 
-(Updated 12/3/22)
+(Updated 7/21/23)

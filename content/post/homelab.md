@@ -9,29 +9,20 @@ image: ""
 
 I'm going to try update this post over time since I get a lot of questions about my home lab. I change things fairly frequently as I test out new technologies and tools, so I'll try to keep the data here updated as best I can so you can see what I'm working on.
 
-## Physical
-#### The Cluster
+## The Cluster
 [Proxmox VE](https://www.proxmox.com/en/) builds in [Ceph](https://docs.ceph.com/en/latest/) distributed storage, so I've hyperconverged by having a 1TB NVMe SSD in each machine and running the VMs off the distributed volume. I also run CephFS on top of this volume for Kubernetes shared storage. 
 
-##### prox01-03
+### prox01-03
 * 3x Dell Optiplex 7060 MFF
 * i7-8700T hex-core
 * 32GB RAM
 * 1TB NVMe
 * Proxmox VE 8.x
 
-### NAS
-##### nas01 - Synology DS1819+ NAS
-* Media NAS
-* 6 x 4TB WD RED HDD (5 active, 1 hot spare)
-* Docker for Homebridge
-* Plex (backup)
-* Minio
+#### Proxmox LXC Containers
 
-## Proxmox LXC Containers
-
-##### k<n> - Ubuntu 20.04 - Kubernetes Multi-master Cluster
-* Kubernetes 1.24 cluster with [RKE2](https://docs.rke2.io/)
+##### k\<n\> - Ubuntu 20.04 - Kubernetes Cluster
+* Kubernetes 1.24 multi-manager cluster with [RKE2](https://docs.rke2.io/)
 * Containerized applications:
   * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/) (internal and external)
   * [Cert-Manager](https://cert-manager.io/docs/)
@@ -81,7 +72,15 @@ I'm going to try update this post over time since I get a lot of questions about
 ##### pgsql01 - Alpine 3.15 - PostgreSQL
 * PostgreSQL database server
 
-### Other Endpoints
+## NAS
+##### nas01 - Synology DS1819+ NAS
+* Media NAS
+* 6 x 4TB WD RED HDD (5 active, 1 hot spare)
+* Docker for Homebridge
+* Plex (backup)
+* Minio
+
+## Other Endpoints
 
 ##### dns02 - Raspbian - Secondary DNS
 * Raspberri Pi Model B

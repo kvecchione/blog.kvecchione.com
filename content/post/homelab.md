@@ -9,10 +9,10 @@ image: ""
 
 I'm going to try update this post over time since I get a lot of questions about my home lab. I change things fairly frequently as I test out new technologies and tools, so I'll try to keep the data here updated as best I can so you can see what I'm working on.
 
-## The Cluster
+### The Cluster
 [Proxmox VE](https://www.proxmox.com/en/) builds in [Ceph](https://docs.ceph.com/en/latest/) distributed storage, so I've hyperconverged by having a 1TB NVMe SSD in each machine and running the VMs off the distributed volume. I also run CephFS on top of this volume for Kubernetes shared storage. 
 
-### prox01-03
+#### prox01-03
 * 3x Dell Optiplex 7060 MFF
 * i7-8700T hex-core
 * 32GB RAM
@@ -24,7 +24,7 @@ I'm going to try update this post over time since I get a lot of questions about
 ##### k\<n\> - Ubuntu 20.04 - Kubernetes Cluster
 * Kubernetes 1.24 multi-manager cluster with [RKE2](https://docs.rke2.io/)
 * Containerized applications:
-  * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/) (internal and external)
+  * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/)
   * [Cert-Manager](https://cert-manager.io/docs/)
   * [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
   * [OpenFaaS](https://www.openfaas.com/)
@@ -35,11 +35,6 @@ I'm going to try update this post over time since I get a lot of questions about
   * [Calibre Web](https://github.com/janeczku/calibre-web)
   * [Bookstack](https://www.bookstackapp.com/)
   * [InvoiceNinja](https://www.invoiceninja.com/)
-  * [MySQL](https://www.mysql.com/)(shared)
-  * [Postgres](https://www.postgresql.org/) (shared)
-  * [MongoDB](https://www.mongodb.com/) (shared)
-  * [InfluxDB](https://www.influxdata.com/)
-  * [Ombi](https://ombi.io/)
   * [Minio](https://min.io/)
   * [Openeats](https://github.com/open-eats/OpenEats)
   * ...lots more
@@ -63,7 +58,7 @@ I'm going to try update this post over time since I get a lot of questions about
 ##### teleport01 - Ubuntu 20.04 - Teleport
 * [Teleport](https://goteleport.com/) Access Server
 
-##### kasm01 - Ubuntu 20.04 - Teleport
+##### kasm01 - Ubuntu 20.04 - Kasm VDI
 * [Kasm](https://kasmweb.com/) VDI
 
 ##### mysql01 - Alpine 3.15 - MariaDB
@@ -72,21 +67,18 @@ I'm going to try update this post over time since I get a lot of questions about
 ##### pgsql01 - Alpine 3.15 - PostgreSQL
 * PostgreSQL database server
 
-## NAS
+### NAS
 ##### nas01 - Synology DS1819+ NAS
 * Media NAS
 * 6 x 4TB WD RED HDD (5 active, 1 hot spare)
-* Docker for Homebridge
-* Plex (backup)
-* Minio
 
-## Other Endpoints
+### Other Endpoints
 
 ##### dns02 - Raspbian - Secondary DNS
 * Raspberri Pi Model B
 * [Adguard](https://adguard.com/) DNS+Adblock
 
-## 3D Printer
+### 3D Printer
 
 Creality Ender 5 Pro
 * Embedded Raspberry Pi 4 with [OctoPrint](https://octoprint.org/)

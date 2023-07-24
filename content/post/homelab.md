@@ -22,7 +22,7 @@ I'm going to try update this post over time since I get a lot of questions about
 #### Proxmox LXC Containers
 
 ##### k\<n\> - Ubuntu 20.04 - Kubernetes Cluster
-* Kubernetes 1.24 multi-manager cluster with [RKE2](https://docs.rke2.io/)
+* Kubernetes 1.25 multi-manager cluster with [RKE2](https://docs.rke2.io/)
 * Containerized applications:
   * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/)
   * [Cert-Manager](https://cert-manager.io/docs/)

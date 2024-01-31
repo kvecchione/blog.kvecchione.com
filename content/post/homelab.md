@@ -68,6 +68,9 @@ I'm going to try update this post over time since I get a lot of questions about
 ##### pgsql01 - Alpine 3.15 - PostgreSQL
 * PostgreSQL database server
 
+##### smtp01 - Alpine 3.15 - SMTP Relay
+* Private SMTP relay server
+
 ### NAS
 ##### nas01 - Synology DS1819+ NAS
 * Media NAS

@@ -37,7 +37,7 @@ I'm going to try update this post over time since I get a lot of questions about
   * [InvoiceNinja](https://www.invoiceninja.com/)
   * [Minio](https://min.io/)
   * [Openeats](https://github.com/open-eats/OpenEats)
-  * [Palworld] (https://github.com/jammsen/docker-palworld-dedicated-server)
+  * [Palworld](https://github.com/jammsen/docker-palworld-dedicated-server)
   * ...lots more
 
 ##### bastion01 - Ubuntu 20.04 - SSH Bastion

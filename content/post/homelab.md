@@ -48,7 +48,7 @@ I'm going to try update this post over time since I get a lot of questions about
 * [cloudflared](https://github.com/cloudflare/cloudflared) with Argo Tunnels
 
 ##### dns01 - Ubuntu 22.04 - Primary DNS
-* [PiHole](https://pi-hole.net/) DNS/Adblock server
+* [Adguard](https://adguard.com/) DNS+Adblock
 
 ##### admin01 - Alpine 3.15 - Admin/Backup/Monitoring
 * Runs custom Python monitoring scripts with integrated Slack alerts

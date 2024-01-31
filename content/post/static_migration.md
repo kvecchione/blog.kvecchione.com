@@ -3,7 +3,7 @@ title: "Static Website Migration"
 slug: "static-migration"
 date: "2018-06-03"
 author: "kevin"
-draft: false
+draft: true
 image: ""
 ---
 

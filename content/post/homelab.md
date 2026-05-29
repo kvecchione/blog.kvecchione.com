@@ -21,46 +21,40 @@ I'm going to try update this post over time since I get a lot of questions about
 
 #### Proxmox LXC Containers
 
-##### k\<n\> - Ubuntu 20.04 - Kubernetes Cluster
-* Kubernetes 1.26 multi-manager cluster with [RKE2](https://docs.rke2.io/)
+##### k\<n\> / kw\<n\> - Ubuntu 20.04 - Kubernetes Cluster
+* Kubernetes 1.35 multi-manager cluster with [RKE2](https://docs.rke2.io/)
+* 3 Managers, 3 Workers
 * Containerized applications:
   * [Nginx Ingress](https://kubernetes.github.io/ingress-nginx/)
   * [Cert-Manager](https://cert-manager.io/docs/)
   * [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
-  * [OpenFaaS](https://www.openfaas.com/)
-  * [Harbor](https://goharbor.io/)
   * [Gitea](https://gitea.io/en-us/)
-  * [OneDev](https://github.com/theonedev/onedev)
   * [Tautulli](https://tautulli.com/)
   * [Calibre Web](https://github.com/janeczku/calibre-web)
   * [Bookstack](https://www.bookstackapp.com/)
   * [InvoiceNinja](https://www.invoiceninja.com/)
   * [Minio](https://min.io/)
   * [Openeats](https://github.com/open-eats/OpenEats)
-  * [Palworld](https://github.com/jammsen/docker-palworld-dedicated-server)
   * ...lots more
 
-##### bastion01 - Ubuntu 20.04 - SSH Bastion
+##### bastion01 - Ubuntu 24.04 - SSH Bastion
 * SSH bastion accessible via [Zerotier](https://www.zerotier.com/)
 
-##### lb01 - Ubuntu 20.04 - Load Balancer
+##### lb01 - Ubuntu 24.04 - Load Balancer
 * [HAProxy](http://www.haproxy.org/) HTTP/TCP proxy for Kubernetes
 * [cloudflared](https://github.com/cloudflare/cloudflared) with Argo Tunnels
 
-##### dns01 - Ubuntu 22.04 - Primary DNS
-* [Adguard](https://adguard.com/) DNS+Adblock
+##### dns0X - Ubuntu 24.04 - DNS (3)
+* [Technitium DNS](https://technitium.com/dns/)
 
-##### admin01 - Alpine 3.15 - Admin/Backup/Monitoring
+##### admin01 - Ubuntu 24.04  - Admin/Backup/Monitoring
 * Runs custom Python monitoring scripts with integrated Slack alerts
 
-##### plex01 - Ubuntu 20.04 - Plex
+##### plex01 - Ubuntu 24.04 - Plex
 * [Plex](https://www.plex.tv/) Media Server
 
-##### teleport01 - Ubuntu 20.04 - Teleport
-* [Teleport](https://goteleport.com/) Access Server
-
-##### kasm01 - Ubuntu 20.04 - Kasm VDI
-* [Kasm](https://kasmweb.com/) VDI
+##### homebridge01 - Ubuntu 24.04 - Homebridge
+* [Homebridge](https://homebridge.io/)
 
 ##### mysql01 - Alpine 3.15 - MariaDB
 * MariaDB database server
@@ -76,15 +70,7 @@ I'm going to try update this post over time since I get a lot of questions about
 * Media NAS
 * 6 x 4TB WD RED HDD (5 active, 1 hot spare)
 
-### Other Endpoints
-
-##### dns02 - Raspbian - Secondary DNS
-* Raspberry Pi Model B
-* [Adguard](https://adguard.com/) DNS+Adblock
-
 ### 3D Printer
+BambuLab P1S
 
-Creality Ender 5 Pro
-* Embedded Raspberry Pi 4 with [OctoPrint](https://octoprint.org/)
-
-(Updated 1/31/24)
+(Updated 5/29/26)
